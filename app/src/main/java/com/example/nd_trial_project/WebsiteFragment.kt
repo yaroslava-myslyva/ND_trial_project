@@ -16,17 +16,23 @@ class WebsiteFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentWebsiteBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.actionBar?.title = arguments?.getString("name")
         setupToolbar()
-        binding.text.text = arguments?.getString("url")
-        Log.d(TAG, "webCreated")
-        Log.d(TAG, "text = ${binding.text.text}")
+
+        binding.webView.apply {
+            webViewClient = MyWebViewClient()
+            arguments?.getString("url")?.let { loadUrl(it) }
+        }
+
+        Log.d(TAG, "webView Created")
+
     }
 
     private fun setupToolbar() {
@@ -42,5 +48,4 @@ class WebsiteFragment : Fragment() {
             }
         })
     }
-
 }

@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -74,9 +75,9 @@ class GalleryAdapter : RecyclerView.Adapter<GalleryAdapter.GalleryViewHolder>() 
 
             itemView.setOnClickListener {
                 Log.d(TAG, "click")
-                val bundle = bundleOf("url" to plant.websiteUrl)
+                val bundle = bundleOf("name" to plant.name, "url" to plant.websiteUrl)
                 fragment.findNavController().navigate(R.id.destination_website_fragment, bundle)
-
+                fragment.findNavController().navigate(R.id.destination_website_fragment, bundle, )
             }
         }
     }
