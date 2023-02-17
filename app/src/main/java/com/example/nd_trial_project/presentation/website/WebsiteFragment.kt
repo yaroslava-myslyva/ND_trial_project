@@ -1,4 +1,4 @@
-package com.example.nd_trial_project
+package com.example.nd_trial_project.presentation.website
 
 import android.os.Bundle
 import android.util.Log
@@ -7,7 +7,8 @@ import androidx.fragment.app.Fragment
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
+import com.example.nd_trial_project.R
+import com.example.nd_trial_project.TAG
 import com.example.nd_trial_project.databinding.FragmentWebsiteBinding
 
 class WebsiteFragment : Fragment() {

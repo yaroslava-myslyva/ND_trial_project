@@ -1,4 +1,4 @@
-package com.example.nd_trial_project
+package com.example.nd_trial_project.presentation.website
 
 import android.annotation.TargetApi
 import android.os.Build

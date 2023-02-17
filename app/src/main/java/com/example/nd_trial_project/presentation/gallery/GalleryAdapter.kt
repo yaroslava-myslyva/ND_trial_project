@@ -1,14 +1,16 @@
-package com.example.nd_trial_project
+package com.example.nd_trial_project.presentation.gallery
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
-import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.example.nd_trial_project.data.Plant
+import com.example.nd_trial_project.R
+import com.example.nd_trial_project.TAG
 import com.example.nd_trial_project.databinding.ItemGalleryBinding
 import kotlin.properties.Delegates
 
@@ -77,7 +79,6 @@ class GalleryAdapter : RecyclerView.Adapter<GalleryAdapter.GalleryViewHolder>() 
                 Log.d(TAG, "click")
                 val bundle = bundleOf("name" to plant.name, "url" to plant.websiteUrl)
                 fragment.findNavController().navigate(R.id.destination_website_fragment, bundle)
-                fragment.findNavController().navigate(R.id.destination_website_fragment, bundle, )
             }
         }
     }
